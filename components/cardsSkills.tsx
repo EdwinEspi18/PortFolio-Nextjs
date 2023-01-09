@@ -19,7 +19,7 @@ export const CardsSkillsPage: FC<Props> = ({ title, images }) => {
       >
         <Card.Body css={{ display: "flex", alignItems: "center" }}>
           <Tooltip shadow content={title}>
-            <Image width={isXs ? 75 : 150} src={images} alt='programming' />
+            <Image width={isXs ? 60 : 70} src={images} alt='programming' />
           </Tooltip>
         </Card.Body>
       </Card>

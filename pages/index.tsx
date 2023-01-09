@@ -43,6 +43,10 @@ const Home: NextPage = () => {
       title: "Node.js",
       images: "/node.svg",
     },
+    {
+      title: "Next UI",
+      images: "/next-ui.svg",
+    },
   ];
   return (
     <>
@@ -115,6 +119,18 @@ const Home: NextPage = () => {
               <CardsSkillsPage key={title} title={title} images={images} />
             ))}
           </Grid.Container>
+        </Container>
+      </Container>
+      <Container id='sobre-mi' fluid css={{ bgColor: "#0075FF" }}>
+        <Text
+          h2
+          className={titles.className}
+          css={{ textAlign: "center", pt: "$10" }}
+        >
+          Sobre mi
+        </Text>
+        <Container md css={{ bgColor: "$red400" }}>
+          <Text>Soy Residente Santiago, Gurabo</Text>
         </Container>
       </Container>
     </>

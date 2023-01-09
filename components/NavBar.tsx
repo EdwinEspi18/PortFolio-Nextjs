@@ -20,7 +20,7 @@ export const NavBar: FC = () => {
         <Navbar.Link href='/#skills'>
           <Text className={titles.className}>Skills</Text>
         </Navbar.Link>
-        <Navbar.Link href='#'>
+        <Navbar.Link href='/#sobre-mi'>
           <Text className={titles.className}>Sobre Mi</Text>
         </Navbar.Link>
         <Navbar.Link href='#'>
@@ -42,7 +42,7 @@ export const NavBar: FC = () => {
           <Link href='/#skills'>Skills</Link>
         </Navbar.CollapseItem>
         <Navbar.CollapseItem>
-          <Link>Sobre Mi</Link>
+          <Link href='/#sobre-mi'>Sobre Mi</Link>
         </Navbar.CollapseItem>
         <Navbar.CollapseItem>
           <Link>Projectos</Link>
