@@ -13,7 +13,7 @@ const PdfViewer: NextPage = () => {
       <Head>
         <title>Descargar CV</title>
       </Head>
-      <Worker workerUrl='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js'>
+      <Worker workerUrl='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.2.146/pdf.worker.min.js'>
         <Viewer plugins={[defaultLayoutPluginInstance]} fileUrl='/tarea.pdf' />
       </Worker>
     </>
