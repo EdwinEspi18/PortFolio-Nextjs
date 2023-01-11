@@ -79,40 +79,55 @@ const Home: NextPage = () => {
                 mt: "$xs",
                 lineHeight: "50px",
               },
-              '@smMax':{
-                mt: '$20'
+              "@smMax": {
+                mt: "$20",
               },
-              '@mdMax':{
-                mt: "$4xl",
-              }
+              "@mdMax": {
+                mt: "$2xl",
+              },
             }}
           >
-            <motion.div initial={{ opacity: 0, x: -100 }} whileInView={ { opacity: 1, x: 0 } } transition={ { duration: 0.6 } } viewport={{ once: true }}>
-            <Row justify='center'>
-              <Text h2 size={50} className={titles.className}>
-                Edwin Alexander
-              </Text>
-            </Row>
-            <Row justify='flex-start'>
-              <Text size={30} className={titles.className}>
-                Espinal Taveras
-              </Text>
-            </Row>
-            <Row justify='flex-start'>
-              <Text
-                size={25}
-                className={titles.className}
-                css={{ color: "#0075FF" }}
-              >
-                Front-End Developer
-              </Text>
-            </Row>
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Row justify='center'>
+                <Text h2 size={50} className={titles.className}>
+                  Edwin Alexander
+                </Text>
+              </Row>
+              <Row justify='flex-start'>
+                <Text size={30} className={titles.className}>
+                  Espinal Taveras
+                </Text>
+              </Row>
+              <Row justify='flex-start'>
+                <Text
+                  size={25}
+                  className={titles.className}
+                  css={{ color: "#0075FF" }}
+                >
+                  Front-End Developer
+                </Text>
+              </Row>
             </motion.div>
           </Container>
         </Grid>
-        <Grid xs={12} md={6} xl={6} css={{ overflow: 'hidden' }}>
-          <motion.div initial={{ opacity: 0, x: 100 }} whileInView={ { opacity: 1, x: 0 } } transition={ { duration: 0.6 } } viewport={{ once: true }}>
-          <Image objectFit="contain" width={isXs ? 300 : isSm ? 400 : 900 } src='/image-blur.svg' alt='logo' />
+        <Grid xs={12} md={6} xl={6} css={{ overflow: "hidden" }}>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Image
+              objectFit='contain'
+              width={isXs ? 300 : isSm ? 400 : 700}
+              src='/image-blur.svg'
+              alt='logo'
+            />
           </motion.div>
         </Grid>
       </Grid.Container>
@@ -126,7 +141,11 @@ const Home: NextPage = () => {
           Skills
         </Text>
 
-        <Container justify='center' alignItems='center' css={{ maxW: "38%", '@xsMax': { maxW: '85%' } }}>
+        <Container
+          justify='center'
+          alignItems='center'
+          css={{ maxW: "38%", "@xsMax": { maxW: "85%" } }}
+        >
           <Grid.Container justify='center' gap={1}>
             {skills.map(({ title, images }) => (
               <CardsSkillsPage key={title} title={title} images={images} />

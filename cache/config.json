@@ -1,6 +1,6 @@
 {
-	"telemetry": {
-		"notifiedAt": "1673394217873",
-		"enabled": false
-	}
+  "telemetry": {
+    "notifiedAt": "1673394217873",
+    "enabled": true
+  }
 }
