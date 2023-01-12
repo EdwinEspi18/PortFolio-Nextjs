@@ -9,8 +9,13 @@ import { useMediaQuery } from "../hooks/useMediaQuery";
 
 import { titles } from "../fonts/font";
 
-import { CardsSkillsPage, Props } from "../components/cardsSkills";
-import { NavBar } from "../components/NavBar";
+import {
+  Contact,
+  SobreMi,
+  CardsSkillsPage,
+  Props,
+  NavBar,
+} from "../components";
 
 const Home: NextPage = () => {
   const isXs = useMediaQuery(360);
@@ -154,18 +159,10 @@ const Home: NextPage = () => {
           <Spacer y={1.5} />
         </Container>
       </Container>
-      <Container id='sobre-mi' fluid css={{ bgColor: "#0075FF" }}>
-        <Text
-          h2
-          className={titles.className}
-          css={{ textAlign: "center", pt: "$10" }}
-        >
-          Sobre mi
-        </Text>
-        <Container md css={{ bgColor: "$red400" }}>
-          <Text>Soy Residente Santiago, Gurabo</Text>
-        </Container>
-      </Container>
+      <SobreMi />
+      <Spacer y={1} />
+      <Contact />
+      <Spacer y={1} />
     </Fragment>
   );
 };
