@@ -162,7 +162,7 @@ const Home: NextPage = () => {
       <SobreMi />
       <Spacer y={1} />
       <Contact />
-      <Spacer y={1} />
+      {/* <Spacer y={1} /> */}
     </Fragment>
   );
 };
