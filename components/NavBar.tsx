@@ -1,14 +1,14 @@
-import { FC } from "react";
-import NextLink from "next/link";
+import { FC, useEffect } from "react";
 
 import { Button, Navbar, Link, Text } from "@nextui-org/react";
+
 import { titles } from "../fonts/font";
 
 export const NavBar: FC = () => {
   return (
     <>
       <div id='nav'></div>
-      <Navbar variant='sticky' maxWidth={"sm"}>
+      <Navbar variant='sticky' maxWidth={"lg"}>
         <Navbar.Toggle showIn='xs' />
         <Navbar.Content hideIn='xs'></Navbar.Content>
         <Navbar.Brand>
@@ -24,7 +24,7 @@ export const NavBar: FC = () => {
           </Link>
         </Navbar.Brand>
         <Navbar.Content hideIn='xs' variant='underline-rounded'>
-          <Navbar.Link href='/#nav' isActive>
+          <Navbar.Link href='/#nav'>
             <Text className={titles.className}>Inicio</Text>
           </Navbar.Link>
           <Navbar.Link href='/#skills'>
@@ -56,9 +56,6 @@ export const NavBar: FC = () => {
           </Navbar.CollapseItem>
           <Navbar.CollapseItem>
             <Link>Projectos</Link>
-          </Navbar.CollapseItem>
-          <Navbar.CollapseItem>
-            <NextLink href='/pdf'>Descargar CV</NextLink>
           </Navbar.CollapseItem>
         </Navbar.Collapse>
       </Navbar>

@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { Container, Text } from "@nextui-org/react";
+import { Container, Spacer, Text } from "@nextui-org/react";
 
 import { titles } from "../fonts/font";
 
@@ -14,9 +14,22 @@ export const SobreMi: FC = () => {
       >
         Sobre mi
       </Text>
-      <Container lg css={{ bgColor: "$red400" }}>
-        <Text>Soy Residente Santiago, Gurabo</Text>
+      <Container xs alignItems='center'>
+        <Text
+          className={titles.className}
+          css={{ letterSpacing: "$wider" }}
+          size={"$2xl"}
+        >
+          Soy un estudiante de la carrera de ING. en Sistemas de la Universidad
+          UTESA. Durante mi carrera me he interesado y especializado en el
+          desarrollo de aplicaciones web y (ocasionalmente diseño) con
+          JavaScript para el frontend y Node.js para el backend. Aprendí a
+          trabajar con distintas tecnologías como React, TypeScript, Next.js,
+          Express, MongoDB, CSS , entre otras. He trabajado también (Poco) con
+          Java, C# y Mysql .
+        </Text>
       </Container>
+      <Spacer y={2} />
     </Container>
   );
 };
