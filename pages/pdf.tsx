@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
+import NextLink from "next/link";
 
 import { Worker, Viewer } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
@@ -13,7 +14,8 @@ const PdfViewer: NextPage = () => {
       <Head>
         <title>Descargar CV</title>
       </Head>
-      <Worker workerUrl='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js'>
+      <NextLink href='/'> Volver </NextLink>
+      <Worker workerUrl='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.2.146/pdf.worker.min.js'>
         <Viewer plugins={[defaultLayoutPluginInstance]} fileUrl='/tarea.pdf' />
       </Worker>
     </>

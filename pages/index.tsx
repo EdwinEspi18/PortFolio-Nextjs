@@ -1,7 +1,9 @@
+import { Fragment } from "react";
 import { NextPage } from "next";
 import Head from "next/head";
 
 import { Container, Grid, Image, Row, Spacer, Text } from "@nextui-org/react";
+import { motion } from "framer-motion";
 
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
@@ -9,9 +11,12 @@ import { titles } from "../fonts/font";
 
 import { CardsSkillsPage, Props } from "../components/cardsSkills";
 import { NavBar } from "../components/NavBar";
+import { SobreMi } from "../components/SobreMi";
 
 const Home: NextPage = () => {
   const isXs = useMediaQuery(360);
+  const isSm = useMediaQuery(650);
+  const isLg = useMediaQuery(1920);
 
   const skills: Props[] = [
     { title: "Next.js", images: "/next.svg" },
@@ -47,9 +52,13 @@ const Home: NextPage = () => {
       title: "Next UI",
       images: "/next-ui.svg",
     },
+    {
+      title: "MongoDB",
+      images: "/mongo.svg",
+    },
   ];
   return (
-    <>
+    <Fragment>
       <Head>
         <title>Home - PortFolio</title>
         <meta
@@ -76,31 +85,56 @@ const Home: NextPage = () => {
                 mt: "$xs",
                 lineHeight: "50px",
               },
+              "@smMax": {
+                mt: "$20",
+              },
+              "@mdMax": {
+                mt: "$2xl",
+              },
             }}
           >
-            <Row justify='center'>
-              <Text h2 size={50} className={titles.className}>
-                Edwin Alexander
-              </Text>
-            </Row>
-            <Row justify='flex-start'>
-              <Text size={30} className={titles.className}>
-                Espinal Taveras
-              </Text>
-            </Row>
-            <Row justify='flex-start'>
-              <Text
-                size={25}
-                className={titles.className}
-                css={{ color: "#0075FF" }}
-              >
-                Front-End Developer
-              </Text>
-            </Row>
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Row justify='center'>
+                <Text h2 size={50} className={titles.className}>
+                  Edwin Alexander
+                </Text>
+              </Row>
+              <Row justify='flex-start'>
+                <Text size={30} className={titles.className}>
+                  Espinal Taveras
+                </Text>
+              </Row>
+              <Row justify='flex-start'>
+                <Text
+                  size={25}
+                  className={titles.className}
+                  css={{ color: "#0075FF" }}
+                >
+                  Front-End Developer
+                </Text>
+              </Row>
+            </motion.div>
           </Container>
         </Grid>
-        <Grid xs={12} md={6} xl={6}>
-          <Image width={isXs ? 300 : 900} src='/image-blur.svg' alt='logo' />
+        <Grid xs={12} md={6} xl={6} css={{ overflow: "hidden" }}>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Image
+              objectFit='contain'
+              width={isXs ? 300 : isSm ? 400 : isLg ? 950 : 700}
+              src='/image-blur.svg'
+              alt='logo'
+            />
+          </motion.div>
         </Grid>
       </Grid.Container>
       <Container id='skills' fluid css={{ bgColor: "$white" }}>
@@ -113,27 +147,21 @@ const Home: NextPage = () => {
           Skills
         </Text>
 
-        <Container justify='center' alignItems='center' css={{ maxW: "60%" }}>
+        <Container
+          justify='center'
+          alignItems='center'
+          css={{ maxW: "38%", "@xsMax": { maxW: "85%" } }}
+        >
           <Grid.Container justify='center' gap={1}>
             {skills.map(({ title, images }) => (
               <CardsSkillsPage key={title} title={title} images={images} />
             ))}
           </Grid.Container>
+          <Spacer y={1.5} />
         </Container>
       </Container>
-      <Container id='sobre-mi' fluid css={{ bgColor: "#0075FF" }}>
-        <Text
-          h2
-          className={titles.className}
-          css={{ textAlign: "center", pt: "$10" }}
-        >
-          Sobre mi
-        </Text>
-        <Container md css={{ bgColor: "$red400" }}>
-          <Text>Soy Residente Santiago, Gurabo</Text>
-        </Container>
-      </Container>
-    </>
+      <SobreMi />
+    </Fragment>
   );
 };
 
