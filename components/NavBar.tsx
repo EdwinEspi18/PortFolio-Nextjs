@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 
 import { Button, Navbar, Link, Text } from "@nextui-org/react";
 
@@ -8,9 +8,9 @@ export const NavBar: FC = () => {
   return (
     <>
       <div id='nav'></div>
-      <Navbar variant='sticky' maxWidth={"lg"}>
+      <Navbar variant='sticky' maxWidth={"fluid"}>
         <Navbar.Toggle showIn='xs' />
-        <Navbar.Content hideIn='xs'></Navbar.Content>
+        <Navbar.Content hideIn={"xs"}></Navbar.Content>
         <Navbar.Brand>
           <Link href='/#nav'>
             <Text
@@ -38,12 +38,13 @@ export const NavBar: FC = () => {
           </Navbar.Link>
         </Navbar.Content>
         <Navbar.Content hideIn='xs'>
-          <Navbar.Link href='/pdf'>
+          <Navbar.Link href='/tarea.pdf' target={"_blank"}>
             <Button shadow rounded color='gradient' bordered>
               Descargar CV
             </Button>
           </Navbar.Link>
         </Navbar.Content>
+        <Navbar.Content hideIn={"xs"}></Navbar.Content>
         <Navbar.Collapse>
           <Navbar.CollapseItem>
             <Link href='/#nav'>Inicio</Link>
@@ -56,6 +57,11 @@ export const NavBar: FC = () => {
           </Navbar.CollapseItem>
           <Navbar.CollapseItem>
             <Link>Projectos</Link>
+          </Navbar.CollapseItem>
+          <Navbar.CollapseItem>
+            <Link href='/tarea.pdf' target={"_blank"}>
+              Descargar CV
+            </Link>
           </Navbar.CollapseItem>
         </Navbar.Collapse>
       </Navbar>

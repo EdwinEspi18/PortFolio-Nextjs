@@ -20,6 +20,7 @@ import {
 const Home: NextPage = () => {
   const isXs = useMediaQuery(360);
   const isSm = useMediaQuery(650);
+  const isLg = useMediaQuery(1920);
 
   const skills: Props[] = [
     { title: "Next.js", images: "/next.svg" },
@@ -54,6 +55,10 @@ const Home: NextPage = () => {
     {
       title: "Next UI",
       images: "/next-ui.svg",
+    },
+    {
+      title: "MongoDB",
+      images: "/mongo.svg",
     },
   ];
   return (
@@ -129,7 +134,7 @@ const Home: NextPage = () => {
           >
             <Image
               objectFit='contain'
-              width={isXs ? 300 : isSm ? 400 : 700}
+              width={isXs ? 300 : isSm ? 400 : isLg ? 950 : 700}
               src='/image-blur.svg'
               alt='logo'
             />
